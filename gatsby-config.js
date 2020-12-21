@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Site",
+    title: "Pandas Great",
   },
   plugins: [
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
+      },
+    },
+    `gatsby-transformer-remark`,
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     {
@@ -29,6 +37,7 @@ module.exports = {
       },
       __key: "pages",
     },
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
